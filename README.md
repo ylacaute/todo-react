@@ -20,16 +20,16 @@ This is a demo application based on React, without Redux, build with Webpack.
  * **React**
    * No redux here, use vanilla event
  * **Archtecture** 
-   * Ready to include in a Maven project
-   * Oriented component
-   * Clear separated resources
+   * Use same Maven project structure
+   * Ready to include in a Spring Boot application (coming soon :bowtie:)
+   * Component-oriented (but clear separation JSX/SCSS)
  * **Responsive**
    * Use SASS and some part of KNACSS
    * Use @extend, @mixin, @media
  * **Test**
    * todo !
  * **Clock widget** 
-   * Just because it looks greats :)
+   * Just because it looks greats :smile:
    
 # Build
 _Download dependencies_:
@@ -43,7 +43,7 @@ npm run start
 
 # Todo
  * **Unit tests**
-   * Jasmine ? Mocha ? Karma ? Protractor ?
+   * Jasmine ? Mocha ? Karma ? Protractor ? :cold_sweat:
  * **Task edition**
    * Allow user to edit an existing task
  * **Router**
