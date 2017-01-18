@@ -16,14 +16,19 @@ This is a demo application based on React, without Redux.
    * Relative path for include
 
 # Featured
- * **React:** no redux here, use vanilla event
- * **Archtecture:** Ready to include in a Maven project
+ * **React:** No redux here, use vanilla event
+ * **Archtecture:** 
+   * Ready to include in a Maven project
+   * Oriented component
+   * Clear separated resources
  * **Responsive:**
    * Use SASS and some part of KNACSS
    * Use @extend, @mixin, @media
  * **Test:**
    * todo !
-
+ * **Clock widget:** 
+   * Just because it looks greats :)
+   
 # Build
 _Download dependencies_:
 ```
@@ -34,12 +39,22 @@ _Start the local server_(localhost:8080):
 npm run start
 ```
 
+# Todo
+ * **Unit tests:**
+   * Jasmine ? Mocha ? Karma ? Protractor ?
+ * **Task edition**
+   * Allow user to edit an existing task
+ * **I18N**
+   * Externalize all texts
+ * **Continuous Integration**
+   * Build a config file for jenkins
+
 # References (USEFULL links)
- * Webpack : [https://github.com/webpack/docs/wiki/configuration](https://github.com/webpack/docs/wiki/configuration)
- * Webpack server : [https://webpack.github.io/docs/webpack-dev-server.html](https://webpack.github.io/docs/webpack-dev-server.html)
- * Webpack copy plugin : [https://www.npmjs.com/package/copy-webpack-plugin-hash](https://www.npmjs.com/package/copy-webpack-plugin-hash)
- * Knacss css framework : [https://github.com/alsacreations/KNACSS/tree/master/doc](https://github.com/alsacreations/KNACSS/tree/master/doc)
- * React Hot loader : [https://medium.com/@rajaraodv/webpacks-hmr-react-hot-loader](https://medium.com/@rajaraodv/webpacks-hmr-react-hot-loader-the-missing-manual-232336dc0d96)
+ * Webpack: [https://github.com/webpack/docs/wiki/configuration](https://github.com/webpack/docs/wiki/configuration)
+ * Webpack server: [https://webpack.github.io/docs/webpack-dev-server.html](https://webpack.github.io/docs/webpack-dev-server.html)
+ * Webpack copy plugin: [https://www.npmjs.com/package/copy-webpack-plugin-hash](https://www.npmjs.com/package/copy-webpack-plugin-hash)
+ * Knacss css framework: [https://github.com/alsacreations/KNACSS/tree/master/doc](https://github.com/alsacreations/KNACSS/tree/master/doc)
+ * React Hot loader: [https://medium.com/@rajaraodv/webpacks-hmr-react-hot-loader](https://medium.com/@rajaraodv/webpacks-hmr-react-hot-loader-the-missing-manual-232336dc0d96)
 
 # License
 MIT
