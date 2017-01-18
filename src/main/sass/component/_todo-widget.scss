@@ -1,0 +1,27 @@
+/* ~~~~~~~~~~~ */
+/* TODO WIDGET */
+/* ~~~~~~~~~~~ */
+
+.todo-widget {
+  @extend %circle-icon-effect;
+  position: absolute;
+  right: 0px;
+  top: -25px;
+  height: 50px;
+  width: 50px;
+  padding-top: 10px;
+  background-color: $link-color;
+  left: 0px;
+  margin: auto;
+  @include medium {
+    height: 40px;
+    width: 40px;
+    top: -20px;
+  }
+  @include tiny {
+    height: 32px;
+    width: 32px;
+    top: -17px;
+    padding-top: 8px;
+  }
+}

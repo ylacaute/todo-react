@@ -1,0 +1,172 @@
+/* ~~~~~~~~~~~~~~~~ */
+/* TODO LIST CONFIG */
+/* ~~~~~~~~~~~~~~~~ */
+
+%single-todo-main-area {
+  width: 90%;
+  padding: 16px 16px 16px 20px;
+  @include small {
+    width: 65%;
+  }
+  @include tiny {
+    width: 65%;
+  }
+}
+
+%single-todo-left-area {
+  @include medium {
+    margin-left: 5px;
+  }
+  width: 10.000%;
+}
+
+
+/* ~~~~~~~~~ */
+/* TODO LIST */
+/* ~~~~~~~~~ */
+.todo {
+  ul {
+    list-style: outside none none;
+    margin: 0;
+  }
+  input {
+    border: 1px solid transparent;
+  }
+
+  /* ~~~~~~ */
+  /* HEADER */
+  /* ~~~~~~ */
+  .todo-header {
+    border-bottom: 1px solid #ddd;
+    padding: 0px 0px 0px 10px;
+    color: $base-title-color;
+    clear: both;
+    input[type=checkbox] {
+      @extend %single-todo-left-area;
+    }
+    input[type=text] {
+      @extend %single-todo-main-area;
+    }
+    .tooltip {
+      @extend %circle-icon-effect;
+      float: right;
+      padding: 5px;
+      @include tiny {
+        margin-right: 10px;
+        margin-top: 10px;
+      }
+      @include small {
+        margin-right: 10px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  /* ~~~~ */
+  /* BODY */
+  /* ~~~~ */
+  .todo-body {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ~~~~~~ */
+  /* FOOTER */
+  /* ~~~~~~ */
+  .todo-footer {
+    padding: 20px 0px 20px 10px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    @include  small {
+      display: block;
+    }
+    .todo-filter {
+      li {
+        display: inline;
+        padding: 0px 10px 0px 10px;
+      }
+      li.active a {
+        color: $link-hover-color;
+      }
+    }
+    .clear-completed {
+      position: absolute;
+      right: 30px;
+      @include small {
+        position: inherit;
+      }
+    }
+  }
+
+}
+
+/* ~~~~ */
+/* ITEM */
+/* ~~~~ */
+.todo .todo-body {
+  clear: both;
+  .toto-item {
+    border: 0px solid transparent;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    input[type=checkbox] {
+      @extend %single-todo-left-area;
+    }
+    span {
+      @extend %single-todo-main-area;
+    }
+    button.destroy {
+      @extend .invisible-button;
+      display: none;
+      float: right;
+      width: 8%;
+      padding: 0px;
+      margin: 0px;
+      color: $link-color;
+      font-size: 1.9em;
+      line-height: 0.7;
+      vertical-align: middle;
+    }
+    button.destroy::after {
+      content: "×";
+    }
+    button.destroy:hover {
+      color: $link-hover-color;
+      cursor: pointer;
+    }
+    input.edit {
+      @extend %single-todo-main-area;
+      display: none;
+    }
+  }
+  .toto-item:hover {
+    button.destroy {
+      display: inline;
+    }
+  }
+  .toto-item.editing {
+    label {
+      display: none;
+    }
+    input.edit {
+      background-color: #f00;
+      padding: 1.1pc 1pc 1.1pc 20px;
+      display: inline;
+      //border-left: 1px solid #ddd;
+      //border-right: 1px solid #ddd;
+    }
+  }
+  .toto-item.hidden {
+    display: none;
+  }
+  .toto-item.completed span {
+    color: #a9a9a9;
+    text-decoration: line-through;
+  }
+}
+
+
+
+
+

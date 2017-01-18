@@ -1,0 +1,163 @@
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~ */
+/* INDEX PAGE MAIN CONTENT */
+/* ~~~~~~~~~~~~~~~~~~~~~~~ */
+.main {
+  @extend %main-area;
+  #react-app {
+    @extend %paper-effect;
+    background-color: $primary-bg-color;
+    margin-top: 80px;
+    clear: both;
+    @include large {
+      margin-top: 40px;
+    }
+    @include tiny {
+      margin-top: 20px;
+      padding: 15px;
+    }
+  }
+}
+
+/* ~~~~~~~~~~~~~~~~~~ */
+/* INDEX PAGE FEATURE */
+/* ~~~~~~~~~~~~~~~~~~ */
+.feature {
+  width: 100%;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  text-align: center;
+  margin-top: 60px;
+  .title {
+    @extend %title;
+    span {
+      color: $todo-icon-beige-1;
+    }
+    color: $todo-icon-beige-3;// #fff;//$placeholder-color;//$dark-bg-text-color;
+    font-size: 5rem;
+    background-color: $almost-white; //$todo-icon-beige-2;//$dark-bg-color;// $todo-icon-beige-2;
+  }
+  .content {
+    @extend %main-area;
+    ul {
+      margin: 50px 0px 0px 0px;
+      list-style: outside none none;
+      li {
+        @extend %card-2;
+        display: inline-block;
+        width: 170px;
+        height: 170px;
+        margin: 0px 10px 20px 10px;
+        padding: 5px;
+        @include medium {
+          width: 106px;
+          height: 106px;
+          padding: 3px;
+        }
+        .icon {
+          @extend %icon;
+          width: 160px;
+          height: 160px;
+          margin-bottom: 30px;
+          @include medium {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ~~~~~~~~~~~~~~~~~ */
+/* INDEX PAGE HEADER */
+/* ~~~~~~~~~~~~~~~~~ */
+header {
+  margin-top: 20px;
+  padding: 0px 20px 10px 20px;
+
+  .logo {
+    @include large     { width: 95px; }
+    @include medium    { width: 90px; }
+    @include small     { width: 75px; }
+    @include tiny      { width: 60px; }
+  }
+  .title {
+    @extend %title;
+    display: inline;
+  }
+  .logo-fun-todo {
+    float: right;
+    width: 200px;
+    @include medium      { width: 150px;  }
+    @include small       { width: 100px;  }
+    @include tiny        { display: none; }
+  }
+  h2 {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+    font-weight: 600;
+    font-size: 2.8rem;
+    //background: url('#{$image-path}/tech/react-text.png') no-repeat 230px;
+    //height: 100px;
+    //line-height: 100px;
+    img {
+      padding-left: 5px;
+      width: 170px;
+    }
+    @include medium      { font-size: 2.6rem; img {width: 170px;} }
+    @include small       { font-size: 2.4rem; img {width: 150px;} }
+    @include tiny        { font-size: 2.2rem; img {width: 110px;} }
+  }
+  nav {
+    margin-top: 10px;
+    a:not(:last-child) {
+      margin-bottom: 5px;
+      margin-right: 5px;
+    }
+    a.download {
+      background-color: $link-hover-color;
+      color: #fff;
+    }
+  }
+
+}
+
+/* ~~~~~~~~~~~~~~~~~ */
+/* INDEX PAGE FOOTER */
+/* ~~~~~~~~~~~~~~~~~ */
+footer {
+  background-color: $dark-bg-color;
+  color: $dark-bg-text-color;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  margin-top: 60px;
+  text-align: center;
+  padding-bottom: 40px;
+  .thorpora-logo {
+    width: 500px;
+    @include medium {
+      width: 300px;
+    }
+  }
+  .author-img {
+    width: 150px;
+    height: 150px;
+    //background-size: cover;
+    background: url('#{$image-path}/ylacaute.jpg') no-repeat center center;
+    background-size: 150px 150px;
+    border-radius: 100px;
+    margin: auto;
+    @include medium {
+      width: 100px;
+      height: 100px;
+      background-size: 100px 100px;
+    }
+  }
+  .fullstack {
+    color: $primary-color;
+  }
+}
+

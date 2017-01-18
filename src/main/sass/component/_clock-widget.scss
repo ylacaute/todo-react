@@ -1,0 +1,89 @@
+
+$sec-color: $todo-mvc-red;
+$hour-color: $base-color;
+$minute-color : $thorpora-gray;
+$bg-clock: $todo-icon-beige-2;
+$border-clock: $todo-icon-beige-1;
+
+.clock-widget {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border: 6px solid $border-clock;
+  border-radius: 50%;
+  background-color: $bg-clock;
+  background-size: 240px 240px;
+  background-repeat: no-repeat;
+  right: 20px;
+  top: 20px;
+  @include medium {
+    width: 70px;
+    height: 70px;
+  }
+  @include tiny {
+    display: none;
+  }
+  .face {
+    width: 100%;
+    height: 100%;
+
+    .hour {
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -4px 0 -4px -25%;
+      padding: 4px 0 4px 25%;
+      background: #000;
+      transform-origin: 100% 50%;
+      background-color: $hour-color;
+      border-radius: 50px;
+    }
+
+    .minute {
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -40% -3px 0;
+      padding: 40% 3px 0;
+      background: #000;
+      transform-origin: 50% 100%;
+      background-color: $minute-color;
+      border-radius: 50px;
+    }
+
+    .second {
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -40% -1px 0 0;
+      padding: 40% 1px 0;
+      transform-origin: 50% 100%;
+      background-color: $sec-color;
+    }
+
+  }
+
+  .face:after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    margin: -6px 0 0 -6px;
+    background: #000;
+    border-radius: 6px;
+    content: "";
+    display: block;
+  }
+
+}
+
+
+
+
