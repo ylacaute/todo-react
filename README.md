@@ -28,7 +28,7 @@ This is a demo application based on React, without Redux, build with Webpack.
  * **Test**
    * todo !
  * **Clock widget** 
-   * Just because it looks greats :smiley:
+   * Just because it looks greats 🤘🤘:metal:
    
 # Build
 _Download dependencies_:
@@ -42,9 +42,11 @@ npm run start
 
 # Todo
  * **Unit tests**
-   * Jasmine ? Mocha ? Karma ? Protractor ? :anguished:
+   * Jasmine ? Mocha ? Karma ? Protractor ? :feelsgood:
  * **REST**
    * Make it ready to be included in a Spring Boot application (coming soon :bowtie:)
+ * **Integration tests** 
+   * Mock a REST server
  * **Task edition**
    * Allow user to edit an existing task
  * **Router**
