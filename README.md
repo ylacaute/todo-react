@@ -7,6 +7,7 @@ This is a demo application based on React, without Redux, build with Webpack.
 
 # Stack
 
+ * **React:** No Redux
  * **Babel:** JavaScript compiler setting up to transform ES2015 and React
  * **SASS:** Preprocessor CSS
  * **webpack:** Module bundler
@@ -16,17 +17,18 @@ This is a demo application based on React, without Redux, build with Webpack.
    * Relative path for include
 
 # Featured
- * **React:** No redux here, use vanilla event
- * **Archtecture:** 
+ * **React**
+   * No redux here, use vanilla event
+ * **Archtecture** 
    * Ready to include in a Maven project
    * Oriented component
    * Clear separated resources
- * **Responsive:**
+ * **Responsive**
    * Use SASS and some part of KNACSS
    * Use @extend, @mixin, @media
- * **Test:**
+ * **Test**
    * todo !
- * **Clock widget:** 
+ * **Clock widget** 
    * Just because it looks greats :)
    
 # Build
@@ -40,10 +42,12 @@ npm run start
 ```
 
 # Todo
- * **Unit tests:**
+ * **Unit tests**
    * Jasmine ? Mocha ? Karma ? Protractor ?
  * **Task edition**
    * Allow user to edit an existing task
+ * **Router**
+   * Back/prev from broswer should works for task filter
  * **I18N**
    * Externalize all texts
  * **Continuous Integration**
