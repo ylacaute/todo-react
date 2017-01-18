@@ -1,7 +1,7 @@
 TodoApp demo with React
 =========================
 
-This is a demo application based on React, without Redux.
+This is a demo application based on React, without Redux, build with Webpack.
 
 ![Screenshot](http://thorpora.fr/wp-content/uploads/2017/01/screenshot.png)
 
