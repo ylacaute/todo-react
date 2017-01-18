@@ -41,6 +41,9 @@ npm run start
  * Knacss css framework : [https://github.com/alsacreations/KNACSS/tree/master/doc](https://github.com/alsacreations/KNACSS/tree/master/doc)
  * React Hot loader : [https://medium.com/@rajaraodv/webpacks-hmr-react-hot-loader](https://medium.com/@rajaraodv/webpacks-hmr-react-hot-loader-the-missing-manual-232336dc0d96)
 
+# License
+MIT
+
 <p align="center">
   <a href="http://thorpora.fr">
     <img src="http://thorpora.fr/wp-content/uploads/2015/03/thorpora4.4.png" width="300" alt="Thorpora - TodoApp with React">
