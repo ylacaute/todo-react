@@ -1,53 +1,48 @@
-# TodoApp demo with React
+TodoApp demo with React
+=========================
 
+This is a demo application based on React, without Redux.
 
+![Screenshot](http://thorpora.fr/wp-content/uploads/2017/01/screenshot.png)
 
-This demo application use some dependencies :
+# Stack
+
  * **Babel:** JavaScript compiler setting up to transform ES2015 and React
-   * babel-core
-   * babel-loader
-   * babel-preset-es2015
-   * babel-preset-react
  * **SASS:** Preprocessor CSS
-   * node-sass
-   * css-loader
-   * sass-loader
-   * style-loader
  * **webpack:** Module bundler
-   * webpack-dev-server: Local server based on Express
-   * extract-text-webpack-plugin: compiled CSS extracted from JS
- * **Hot reloading**
-   * Webpack hot middleware: to enable hot reloading
-   * react hot loader: hot reloading for react modules
+   * Local server
+   * Hot reloading (for all resources)
+   * Compiled CSS extracted from JS
+   * Relative path for include
 
-# Download dependencies
+# Featured
+ * **React:** no redux here, use vanilla event
+ * **Archtecture:** Ready to include in a Maven project
+ * **Responsive:**
+   * Use SASS and some part of KNACSS
+   * Use @extend, @mixin, @media
+ * **Test:**
+   * todo !
+
+# Build
+_Download dependencies_:
+```
 npm i
+```
+_Start the local server_(localhost:8080):
+```
+npm run start
+```
 
-# Build and start a local server
-npm run dev
+# References (USEFULL links)
+ * Webpack : [https://github.com/webpack/docs/wiki/configuration](https://github.com/webpack/docs/wiki/configuration)
+ * Webpack server : [https://webpack.github.io/docs/webpack-dev-server.html](https://webpack.github.io/docs/webpack-dev-server.html)
+ * Webpack copy plugin : [https://www.npmjs.com/package/copy-webpack-plugin-hash](https://www.npmjs.com/package/copy-webpack-plugin-hash)
+ * Knacss css framework : [https://github.com/alsacreations/KNACSS/tree/master/doc](https://github.com/alsacreations/KNACSS/tree/master/doc)
+ * React Hot loader : [https://medium.com/@rajaraodv/webpacks-hmr-react-hot-loader](https://medium.com/@rajaraodv/webpacks-hmr-react-hot-loader-the-missing-manual-232336dc0d96)
 
-# Build for production
-npm run prod
-
-# References
- * Webpack 
- * Webpack server : https://webpack.github.io/docs/webpack-dev-server.html
- * Webpack file loader plugin : https://github.com/webpack/file-loader
- * Webpack copy plugin : https://www.npmjs.com/package/copy-webpack-plugin-hash
- * Knacss css framework :
- * React Hot loader : 
- * a
- * a
- * a
-
-TO SEE 
-https://facebook.github.io/react/blog/2015/09/02/new-react-developer-tools.html
-
-
--d : dev
--p : prod
---watch : auto update when source change
-
-./node_modules/.bin/webpack -d --watch
-
-npm install --save-dev webpack-dev-server
+<p align="center">
+  <a href="http://thorpora.fr">
+    <img src="http://thorpora.fr/wp-content/uploads/2015/03/thorpora4.4.png" width="300" alt="Thorpora - TodoApp with React">
+  </a>
+</p>

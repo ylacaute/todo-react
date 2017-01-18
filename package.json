@@ -1,7 +1,7 @@
 {
   "name": "react-hello-world",
   "version": "1.0.0",
-  "description": "hello",
+  "description": "Todo App build with React !",
   "scripts": {
     "build": "./node_modules/.bin/webpack -d",
     "start": "./node_modules/.bin/webpack -d && ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base assets --inline --hot",
