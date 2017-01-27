@@ -4,6 +4,7 @@ import TodoItemList from './TodoItemList.jsx';
 import TodoFilter from './TodoFilter.jsx';
 import TodoItemFactory from './TodoItemFactory.jsx';
 import TodoEvent from './TodoEvent.jsx';
+import TodoRepository from './TodoRepository.jsx';
 
 const ENTER_KEY = 13;
 
@@ -26,6 +27,15 @@ class Todo extends React.Component {
     this.deleteCompletedItems = this.deleteCompletedItems.bind(this);
     this.checkAllItems = this.checkAllItems.bind(this);
     this.handlerKeyUp = this.handlerKeyUp.bind(this);
+    TodoRepository.getTasks(this.props.id, (tasks) => {
+      this.updateAllItems(tasks)
+    });
+  }
+
+  getState(callback) {
+    this.setState((prevState) => {
+      callback(prevState);
+    });
   }
 
   componentDidUpdate() {
@@ -33,6 +43,9 @@ class Todo extends React.Component {
       ReactDOM.findDOMNode(this),
       this.state.todoItems.length,
       this.countCompleted(this.state.todoItems));
+  }
+
+  componentDidMount() {
   }
 
   isAtLeastOneDone(todoItems) {
@@ -62,72 +75,85 @@ class Todo extends React.Component {
     }
   }
 
-  toggleItemCompleted(todoItems, todoItemId) {
-    let item = TodoFilter.findById(todoItems, todoItemId);
-    let itemIndex = todoItems.indexOf(item);
-    let modifiedItem = Object.assign({}, item, {isDone: !item.isDone});
-    return [
-      ...todoItems.slice(0, itemIndex),
-      modifiedItem,
-      ...todoItems.slice(itemIndex + 1)
-    ];
+  updateAllItems(items) {
+    this.setState({
+      todoItems: items,
+      selectAllChecked: false
+    });
   }
 
   addItem(todoItem) {
-    this.setState((prevState) => {
-      return {
-        todoItems: [...prevState.todoItems, todoItem],
-        selectAllChecked: false
-      }
+    TodoRepository.addTask(this.props.id, todoItem, (postedItem) => {
+      this.setState((prevState) => {
+        return {
+          todoItems: [...prevState.todoItems, postedItem],
+          selectAllChecked: false
+        }
+      });
     });
-    console.log("ADD A FUCKING ITEM");
-
   }
 
   deleteItem(todoItemId) {
-    this.setState((prevState) => {
-      let todoItems = TodoFilter.excludeById(prevState.todoItems, todoItemId);
-      return {
-        todoItems: todoItems,
-        atLeastOneDone: this.isAtLeastOneDone(todoItems),
-        selectAllChecked: this.isAllCompleted(todoItems)
-      }
+    TodoRepository.deleteTask(todoItemId, () => {
+      this.setState((prevState) => {
+        let todoItems = TodoFilter.excludeById(prevState.todoItems, todoItemId);
+        return {
+          todoItems: todoItems,
+          atLeastOneDone: this.isAtLeastOneDone(todoItems),
+          selectAllChecked: this.isAllCompleted(todoItems)
+        }
+      });
     });
   }
 
   checkItem(todoItemId) {
-    this.setState((prevState) => {
-      let todoItems = this.toggleItemCompleted(prevState.todoItems, todoItemId);
-      return {
-        todoItems: todoItems,
-        atLeastOneDone: this.isAtLeastOneDone(todoItems),
-        selectAllChecked: this.isAllCompleted(todoItems)
-      }
+    this.getState((curState) => {
+      let item = TodoFilter.findById(curState.todoItems, todoItemId);
+      let itemIndex = curState.todoItems.indexOf(item);
+      let modifiedItem = Object.assign({}, item, {isDone: !item.isDone});
+      let newTodoitems = [
+        ...curState.todoItems.slice(0, itemIndex),
+        modifiedItem,
+        ...curState.todoItems.slice(itemIndex + 1)
+      ];
+      TodoRepository.updateTask(modifiedItem, () => {
+        this.setState({
+          todoItems: newTodoitems,
+          atLeastOneDone: this.isAtLeastOneDone(newTodoitems),
+          selectAllChecked: this.isAllCompleted(newTodoitems)
+        });
+      });
     });
   }
 
   deleteCompletedItems() {
-    this.setState((prevState) => {
-      let todoItems = TodoFilter.notCompleted(prevState.todoItems);
-      return {
+    this.getState((curState) => {
+      let todoItems = TodoFilter.notCompleted(curState.todoItems);
+      let newTodoState = {
         todoItems: todoItems,
         atLeastOneDone: false,
         selectAllChecked: false
-      }
+      };
+      TodoRepository.updateTodo(this.props.id, newTodoState, () => {
+        this.setState(newTodoState);
+      })
     });
   }
 
   checkAllItems() {
-    this.setState((prevState) => {
+    this.getState((curState) => {
       let newState = !prevState.selectAllChecked;
       let todoItems = this.state.todoItems.map((item) => {
         return Object.assign({}, item, {isDone: newState});
       });
-      return {
+      let newTodoState = {
         todoItems: todoItems,
         atLeastOneDone: newState,
         selectAllChecked: newState
-      }
+      };
+      TodoRepository.updateTasks(todoItems, () => {
+        this.setState(newTodoState);
+      })
     });
   }
 
@@ -202,6 +228,7 @@ class Todo extends React.Component {
 }
 
 Todo.propTypes = {
+  id: React.PropTypes.string.isRequired,
   domId: React.PropTypes.string.isRequired
 };
 

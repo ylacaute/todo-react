@@ -1,10 +1,11 @@
 
-var webpack = require('webpack');
-var path = require('path');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var BUILD_DIR = path.resolve(__dirname, 'assets');
-var SRC_DIR = path.resolve(__dirname, 'src');
+const webpack = require('webpack');
+const path = require('path');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const BUILD_DIR = path.resolve(__dirname, 'assets');
+const SRC_DIR = path.resolve(__dirname, 'src');
 
 var config = {
   entry: [

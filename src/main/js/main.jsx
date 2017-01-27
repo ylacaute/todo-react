@@ -10,20 +10,17 @@ class App extends React.Component {
   constructor(props) {
     super(props);
   }
-//
-
 
   render () {
-    let domId = "todo";
+    let todoDomId = 'todo';
     return (
       <div>
-        <Todo domId={domId} />
-        <TodoWidget todoDomId={domId} />
+        <Todo id={'1'} domId={todoDomId} />
+        <TodoWidget todoDomId={todoDomId} />
         <ClockWidget />
       </div>
     );
   }
-
 }
 
 render(<App/>, document.getElementById('react-app'));

@@ -32,9 +32,9 @@ class TodoItem extends React.Component {
         <input type="checkbox"
                checked={this.props.isDone}
                onChange={this.checkItem}/>
-        <span>{this.props.text}</span>
+        <span>{this.props.name}</span>
         <input className="edit" type="text"
-               defaultValue={this.props.text} />
+               defaultValue={this.props.name} />
         <button className="destroy"
                 onClick={this.deleteItem} />
       </li>
@@ -46,9 +46,9 @@ class TodoItem extends React.Component {
 TodoItem.propTypes = {
   checkItem : React.PropTypes.func.isRequired,
   deleteItem : React.PropTypes.func.isRequired,
-  id: React.PropTypes.number.isRequired,
+  id: React.PropTypes.string.isRequired,
   isDone : React.PropTypes.bool.isRequired,
-  text : React.PropTypes.string.isRequired
+  name : React.PropTypes.string.isRequired
 };
 
 export default TodoItem;

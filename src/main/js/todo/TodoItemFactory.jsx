@@ -1,18 +1,14 @@
 
 import React from 'react';
+import UUID from 'js/utils/UUID.js'
 
 class TodoItemFactory {}
 
-TodoItemFactory.todoItemIdCounter = 0;
-
-TodoItemFactory.getNextId = function() {
-  return TodoItemFactory.todoItemIdCounter++;
-};
-
-TodoItemFactory.create = function(text) {
+TodoItemFactory.create = function(name) {
   return {
-    id: TodoItemFactory.getNextId(),
-    text: text,
+    id: UUID.random(),
+    todoId: 1,
+    name: name,
     isDone: false
   };
 };
