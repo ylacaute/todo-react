@@ -22,6 +22,7 @@ This is a demo application based on React, without Redux, build with Webpack.
  * **Archtecture** 
    * Use same Maven project structure
    * Component-oriented (but clear separation JSX/SCSS)
+   * Simple REST calls (using fetch and json-server)
  * **Responsive**
    * Use SASS and some part of KNACSS
    * Use @extend, @mixin, @media
@@ -30,23 +31,23 @@ This is a demo application based on React, without Redux, build with Webpack.
  * **Clock widget** 
    * Just because it looks greats 🤘🤘:metal:
    
-# Build
+# Getting started
 _Download dependencies_:
 ```
 npm i
 ```
-_Start the local server_(localhost:8080):
+_Start the local server (localhost:8080) :_
 ```
 npm run start
 ```
+_Start the local API json-server (localhost:3000) :_
+```
+npm run startApi
+```
 
 # Todo
- * **Unit tests**
+ * **Unit and Integration tests**
    * Jasmine ? Mocha ? Karma ? Protractor ? :feelsgood:
- * **REST**
-   * Make it ready to be included in a Spring Boot application (coming soon :bowtie:)
- * **Integration tests** 
-   * Mock a REST server
  * **Task edition**
    * Allow user to edit an existing task
  * **Router**
