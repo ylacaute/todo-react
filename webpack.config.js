@@ -3,22 +3,11 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-
-const BUILD_DIR = path.resolve(__dirname, 'assets');
+const Options = require('./options.js');
 const SRC_DIR = path.resolve(__dirname, 'src');
 
-function getApiPort(argv) {
-  // Should be override by package.json configuration
-  const DEFAULT_API_PORT = "8081";
-  const API_PORT_OPT = "--api-port";
-  const apiPortIdx = argv.indexOf(API_PORT_OPT);
-  if (apiPortIdx != -1) {
-    return argv[apiPortIdx + 1];
-  }
-  return DEFAULT_API_PORT;
-}
-
-var API_PORT = getApiPort(process.argv);
+var API_PORT = Options.getApiPort();
+var BUILD_DIR = Options.getBuildDir();
 
 var config = {
   entry: [
