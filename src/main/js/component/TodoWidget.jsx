@@ -1,5 +1,5 @@
 import React from 'react';
-import TodoEvent from './../todo/TodoEvent.jsx';
+import TodoEvent from 'js/component/todo/TodoEvent.jsx';
 
 // External widget to illustrate event system without Redux
 class TodoWidget extends React.Component {
