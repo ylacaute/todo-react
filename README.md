@@ -51,13 +51,13 @@ npm run start-api
 ```
 **Build and start the local dev server on custom ports**
 ```
-npm run start-custom --  --port 5000 --api-port 5001
+npm run start-custom -- --port 5000 --api-port 5001
 ```
 Be aware that both --port and --api-port must be set with start-custom 
 
 **Start the local dev server on custom port**
 ```
-npm run start-api-custom --  --port 5001
+npm run start-api-custom -- --port 5001
 ```
 **Build and run test**
 ```
@@ -65,7 +65,7 @@ npm run test
 ```
 
 # Configuration
-_The package.json file allow you to easily change default port with the config part:_
+The package.json file allow you to easily change default ports with the config part.
 ```
   "config": {
     "dev": {
@@ -74,7 +74,7 @@ _The package.json file allow you to easily change default port with the config p
     }
   },
 ```
-The Webpack server is configured for acting as proxy for the API server (route /api). The proxy use the config defined in package.json.
+The Webpack server is configured for acting as proxy for the API server (route /api). The proxy use the config the custom configuration set in CLI or the default one defined in package.json.
 
 # Using existing backend server
 
