@@ -2,11 +2,24 @@
   "name": "react-hello-world",
   "version": "1.0.0",
   "description": "Todo App build with React !",
+  "config": {
+    "dev": {
+      "FRONT_PORT": "8080",
+      "API_PORT": "8081"
+    }
+  },
   "scripts": {
     "build": "./node_modules/.bin/webpack -d",
-    "start": "./node_modules/.bin/webpack -d && ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base assets --inline --hot",
-    "startApi": "./node_modules/.bin/json-server server/db.json --routes server/routes.json --port 3000",
-    "test": "echo \"Error: TODO :)\" && exit 1"
+    "build-prod": "./node_modules/.bin/webpack -p",
+
+    "prestart": "npm run build",
+    "start": "API_PORT=$npm_package_config_dev_API_PORT ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --port $npm_package_config_dev_FRONT_PORT --content-base assets --inline --hot",
+
+    "start-api-default": "./node_modules/.bin/json-server server/db.json --routes server/routes.json",
+    "start-api": "npm run start-api-default -- --port $npm_package_config_dev_API_PORT",
+
+    "pretest": "npm run build",
+    "test": "echo 'Error: TODO :)'"
   },
   "dependencies": {
     "react": "^15.4.2",

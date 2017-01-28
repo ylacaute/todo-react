@@ -4,27 +4,24 @@ const path = require('path');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const BUILD_DIR = path.resolve(__dirname, 'assets');
+const BUILD_DIR = path.resolve(__dirname, '../app-gateway/src/main/resources/static');
 const SRC_DIR = path.resolve(__dirname, 'src');
-
-const API_HOST = "";
-const API_PORT = process.env.API_PORT;
 
 var config = {
   entry: [
     SRC_DIR + '/main/js/main.jsx'
   ],
+  devServer: {
+    proxy: {
+      "/api": {
+        target: "http://localhost:8081/"
+      }
+    }
+  },
   output: {
     context: BUILD_DIR,
     path: BUILD_DIR,
     filename: 'bundle.js',
-  },
-  devServer: {
-    proxy: {
-      "/api": {
-        target: "http://localhost:" + API_PORT
-      }
-    }
   },
   module: {
     loaders: [
@@ -44,7 +41,7 @@ var config = {
     // Copy static resources (img, html...)
     new CopyWebpackPlugin([{
       from: SRC_DIR + "/main/resources"
-    }])
+    }]),
   ],
   resolve: {
     // Simplify JSX import (search imports for ./src/main)

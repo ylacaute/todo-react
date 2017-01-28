@@ -15,7 +15,9 @@ This is a demo application based on React, without Redux, build with Webpack.
    * Hot reloading (for all resources)
    * Compiled CSS extracted from JS
    * Relative path for include
-
+ * **Json-server:** light API server to mock backend
+ * **NPM:** Task builder
+ 
 # Featured
  * **React**
    * No redux here, use vanilla event
@@ -23,6 +25,9 @@ This is a demo application based on React, without Redux, build with Webpack.
    * Use same Maven project structure
    * Component-oriented (but clear separation JSX/SCSS)
    * Simple REST calls (using fetch and json-server)
+   * NPM as task builder
+   * API REST server with json-server
+   * Webpack dev server set as proxy for API calls
  * **Responsive**
    * Use SASS and some part of KNACSS
    * Use @extend, @mixin, @media
@@ -36,14 +41,34 @@ _Download dependencies_:
 ```
 npm i
 ```
-_Start the local server (localhost:8080) :_
+Start the local dev server (with hot reloading):
 ```
 npm run start
 ```
-_Start the local API json-server (localhost:3000) :_
+_Default port: 8080 (set in the config section in package.json)_
+
+Start the local dev API server (json-server):
 ```
-npm run startApi
+npm run start-api
 ```
+_Default port: 8081 (set in the config section in package.json)_
+
+Start the local dev API server on a custom port:
+```
+npm run start-api-default -- --port 1234
+```
+
+# Configuration
+_The package.json file allow you to easily change port with the config part:_
+```
+  "config": {
+    "dev": {
+      "FRONT_PORT": "8080",
+      "API_PORT": "8081"
+    }
+  },
+```
+The Webpack server is configured for acting as proxy for the API server (route /api). The proxy use the config defined in package.json.
 
 # Todo
  * **Unit and Integration tests**

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HOST = "http://localhost:3000/api/";
+const HOST = "/api/";
 
 class TodoRepository {
 }

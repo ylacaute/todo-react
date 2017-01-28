@@ -13,9 +13,10 @@ class App extends React.Component {
 
   render () {
     let todoDomId = 'todo';
+    let todoId = 'b96983d5-268e-40d8-be62-5eaca333964c';
     return (
       <div>
-        <Todo id={'1'} domId={todoDomId} />
+        <Todo id={todoId} domId={todoDomId} />
         <TodoWidget todoDomId={todoDomId} />
         <ClockWidget />
       </div>
