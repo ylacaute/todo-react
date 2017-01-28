@@ -41,7 +41,7 @@ _Download dependencies_:
 ```
 npm i
 ```
-Start the local dev server (with hot reloading):
+Build and start the local dev server (with hot reloading):
 ```
 npm run start
 ```
@@ -53,13 +53,23 @@ npm run start-api
 ```
 _Default port: 8081 (set in the config section in package.json)_
 
-Start the local dev API server on a custom port:
+Build and start the local dev server on custom port:
 ```
-npm run start-api-default -- --port 1234
+npm run start-custom --  --port 5000 --api-port 5001
+```
+Be aware that both --port and --api-port must be set with start-custom 
+
+Start the local dev server on custom port:
+```
+npm run start-api-custom --  --port 5001
+```
+Build and run test:
+```
+npm run test
 ```
 
 # Configuration
-_The package.json file allow you to easily change port with the config part:_
+_The package.json file allow you to easily change default port with the config part:_
 ```
   "config": {
     "dev": {

@@ -4,19 +4,22 @@
   "description": "Todo App build with React !",
   "config": {
     "dev": {
-      "FRONT_PORT": "8080",
-      "API_PORT": "8081"
+      "FRONT_PORT": "3333",
+      "API_PORT": "4444"
     }
   },
   "scripts": {
     "build": "./node_modules/.bin/webpack -d",
     "build-prod": "./node_modules/.bin/webpack -p",
 
-    "prestart": "npm run build",
-    "start": "API_PORT=$npm_package_config_dev_API_PORT ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --port $npm_package_config_dev_FRONT_PORT --content-base assets --inline --hot",
+    "prestart-base": "npm run build",
+    "start-custom": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base assets --inline --hot",
+    "start-custom:args": "npm run start-default -- args",
+    "start": "npm run start-custom -- --port $npm_package_config_dev_FRONT_PORT --api-port $npm_package_config_dev_API_PORT",
 
-    "start-api-default": "./node_modules/.bin/json-server server/db.json --routes server/routes.json",
-    "start-api": "npm run start-api-default -- --port $npm_package_config_dev_API_PORT",
+    "start-api-custom" : "./node_modules/.bin/json-server server/db.json --routes server/routes.json",
+    "start-api-custom:args": "npm run start-api-custom -- args",
+    "start-api": "npm run start-api-custom -- --port $npm_package_config_dev_API_PORT",
 
     "pretest": "npm run build",
     "test": "echo 'Error: TODO :)'"

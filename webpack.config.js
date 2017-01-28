@@ -7,8 +7,18 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const BUILD_DIR = path.resolve(__dirname, 'assets');
 const SRC_DIR = path.resolve(__dirname, 'src');
 
-const API_HOST = "";
-const API_PORT = process.env.API_PORT;
+function getApiPort(argv) {
+  // Should be override by package.json configuration
+  const DEFAULT_API_PORT = "8081";
+  const API_PORT_OPT = "--api-port";
+  const apiPortIdx = argv.indexOf(API_PORT_OPT);
+  if (apiPortIdx != -1) {
+    return argv[apiPortIdx + 1];
+  }
+  return DEFAULT_API_PORT;
+}
+
+var API_PORT = getApiPort(process.argv);
 
 var config = {
   entry: [
