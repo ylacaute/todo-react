@@ -41,7 +41,11 @@ This is a demo application based on React, without Redux, build with Webpack.
 ```
 npm i
 ```
-**Build and start the local dev server** (port 8080, hot reloading)
+**Build for dev** (build directory is 'assets')
+```
+npm run build
+```
+**Start the local dev server** (port 8080, hot reloading)
 ```
 npm run start
 ```
@@ -49,13 +53,19 @@ npm run start
 ```
 npm run start-api
 ```
-**Build and start the local dev server on custom ports**
+
+# More options
+**Build with a custom build directory**
+```
+npm run build -- --build-dir ../app/src/main/resources/static 
+```
+**Start the local dev server on custom ports**
 ```
 npm run start-custom -- --port 5000 --api-port 5001
 ```
 Be aware that both --port and --api-port must be set with start-custom 
 
-**Start the local dev server on custom port**
+**Start the local API server on custom port**
 ```
 npm run start-api-custom -- --port 5001
 ```

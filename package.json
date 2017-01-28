@@ -12,7 +12,6 @@
     "build": "./node_modules/.bin/webpack -d",
     "build-prod": "./node_modules/.bin/webpack -p",
 
-    "prestart-base": "npm run build",
     "start-custom": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base assets --inline --hot",
     "start-custom:args": "npm run start-default -- args",
     "start": "npm run start-custom -- --port $npm_package_config_dev_FRONT_PORT --api-port $npm_package_config_dev_API_PORT",
