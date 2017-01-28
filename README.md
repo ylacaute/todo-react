@@ -37,33 +37,29 @@ This is a demo application based on React, without Redux, build with Webpack.
    * Just because it looks greats 🤘🤘:metal:
    
 # Getting started
-_Download dependencies_:
+**Download dependencies**
 ```
 npm i
 ```
-Build and start the local dev server (with hot reloading):
+**Build and start the local dev server** (port 8080, hot reloading)
 ```
 npm run start
 ```
-_Default port: 8080 (set in the config section in package.json)_
-
-Start the local dev API server (json-server):
+**Start the local dev API server** (port 8081)
 ```
 npm run start-api
 ```
-_Default port: 8081 (set in the config section in package.json)_
-
-Build and start the local dev server on custom port:
+**Build and start the local dev server on custom ports**
 ```
 npm run start-custom --  --port 5000 --api-port 5001
 ```
 Be aware that both --port and --api-port must be set with start-custom 
 
-Start the local dev server on custom port:
+**Start the local dev server on custom port**
 ```
 npm run start-api-custom --  --port 5001
 ```
-Build and run test:
+**Build and run test**
 ```
 npm run test
 ```
@@ -79,6 +75,12 @@ _The package.json file allow you to easily change default port with the config p
   },
 ```
 The Webpack server is configured for acting as proxy for the API server (route /api). The proxy use the config defined in package.json.
+
+# Using existing backend server
+
+ * Checkout this project in an **ignored** directory from git inside your Spring Boot app
+ * Start the dev server with good backend port
+ * TODO
 
 # Todo
  * **Unit and Integration tests**
