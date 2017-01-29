@@ -87,12 +87,20 @@ The package.json file allow you to easily change default ports with the config p
 The Webpack server is configured for acting as proxy for the API server (route /api). The proxy use the config the custom configuration set in CLI or the default one defined in package.json.
 
 # Using existing backend server
+**Development:** you can easily work on both front and back side at the same time. For example you could :
+ * Checkout the front project in an **ignored directory** (.gitignore) inside your Spring Boot application
+ * Start the Spring Boot app on 8081
+ * Start the dev server with 8081 as API server port
 
- * Checkout this project in an **ignored** directory from git inside your Spring Boot app
- * Start the dev server with good backend port
- * TODO
+**Production/integration:** the build of the front app must be customized
+ * Specify the build directory of the front app in resources/static of the Spring Boot project 
+ * Start your Spring Boot app as usual
+
+[The Spring boot backend server for this TodoApp is available here.](https://github.com/ylacaute/spring-boot-todo-app)
 
 # Todo
+ * **Better build task**
+   * Find a way to manage front build with maven
  * **Unit and Integration tests**
    * Jasmine ? Mocha ? Karma ? Protractor ? :feelsgood:
  * **Task edition**
