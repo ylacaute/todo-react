@@ -63,7 +63,7 @@ npm run build -- --build-dir ../app/src/main/resources/static
 ```
 npm run start-custom -- --port 5000 --api-port 5001
 ```
-Be aware that both --port and --api-port must be set with start-custom 
+Be aware that both --port and --api-port must be set with start-custom. You need to configure the API server port because the webpack dev server act as a proxy for API request.
 
 **Start the local API server on custom port**
 ```
