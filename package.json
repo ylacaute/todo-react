@@ -13,7 +13,7 @@
     "build-prod": "./node_modules/.bin/webpack -p",
 
     "start-custom": "./node_modules/webpack-dev-server/bin/webpack-dev-server.js --content-base assets --inline --hot",
-    "start-custom:args": "npm run start-default -- args",
+    "start-custom:args": "npm run start-custom-- args",
     "start": "npm run start-custom -- --port $npm_package_config_dev_FRONT_PORT --api-port $npm_package_config_dev_API_PORT",
 
     "start-api-custom" : "./node_modules/.bin/json-server server/db.json --routes server/routes.json",
