@@ -2,11 +2,10 @@
 // Main configuration (variables)
 @import "config.scss";
 
-// View size variables
+// Knacss config
 @import "../../../node_modules/knacss/sass/_config/breakpoints";
-
-// Knacss mixins
 @import "../../../node_modules/knacss/sass/_config/mixins";
+@import "../../../node_modules/knacss/sass/_config/variables";
 
 // Normalize (basic reset)
 @import "../../../node_modules/knacss/sass/_vendor/normalize";
